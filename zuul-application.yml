@@ -1,8 +1,14 @@
+spring:
+  profiles:
+    active: dev #默认环境
+
+---    
 server:
   port: 9527
 spring:
   application:
     name: MICROSERVICE-ZUUL-GATEWAY-DEV  #路由名称
+  profiles: dev #环境
 eureka:
   client:
     service-url:

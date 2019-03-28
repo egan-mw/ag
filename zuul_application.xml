@@ -1,0 +1,45 @@
+spring:
+  profiles:
+    active: dev #默认环境
+
+---
+server:
+  port: 9527
+spring:
+  application:
+    name: MICROSERVICE-ZUUL-GATEWAY-DEV  #路由名称
+    profiles: dev #dev环境
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka #注册中心地址
+  instance:
+    instance-id: gateway-9527 #注册中心显示的名字
+    prefer-ip-address: true  #注册中心左下角显示ip（可以不要）
+zuul:
+  routes:
+    mwUser.serviceId: test-server-dev  #做映射，服务提供者的服务名（eganUser随便取）
+    mwUser.path: /test/**   #访问的时候，是/test打头的地址，就使用test-server-dev来响应做映射：解决地址太长了，服务名的暴露的问题
+  ignored-services: "*"  #禁止使用服务名访问:如果有很多，可以直接使用"*"忽略所有
+  prefix: "/aigou"  # 统一前缀（访问的路径加上前缀）
+  
+---
+server:
+  port: 9528
+spring:
+  application:
+    name: MICROSERVICE-ZUUL-GATEWAY-TEST  #路由名称
+    profiles: test #dev环境
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka #注册中心地址
+  instance:
+    instance-id: gateway-9527 #注册中心显示的名字
+    prefer-ip-address: true  #注册中心左下角显示ip（可以不要）
+zuul:
+  routes:
+    mwUser.serviceId: test-server-dev  #做映射，服务提供者的服务名（eganUser随便取）
+    mwUser.path: /test/**   #访问的时候，是/test打头的地址，就使用test-server-dev来响应做映射：解决地址太长了，服务名的暴露的问题
+  ignored-services: "*"  #禁止使用服务名访问:如果有很多，可以直接使用"*"忽略所有
+  prefix: "/aigou"  # 统一前缀（访问的路径加上前缀）

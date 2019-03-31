@@ -20,7 +20,7 @@ zuul:
   routes:
     plat.serviceId: plat-service #做映射，服务提供者的服务名（plat随便取）
     plat.path: /plat/**   #访问的时候，是/plat打头的地址，就使用plat-service来响应做映射：解决地址太长了，服务名的暴露的问题
-	product.serviceId: product-service 
-	product.path: /product/**   
+		product.serviceId: product-service 
+		product.path: /product/**   
   ignored-services: "*"  #禁止使用服务名访问:如果有很多，可以直接使用"*"忽略所有
   prefix: "/aigou"  # 统一前缀（访问的路径加上前缀）

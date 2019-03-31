@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    active: dev #默认环境
+
+---
+server:
+  port: 8002
+spring:
+  application:
+    name: PRODUCT-SERVICE
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/aigou
+    username: root
+    password: 123456
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+mybatis-plus:
+  mapper-locations: classpath:site/egan/aigou/mapper/*Mapper.xml
+type-aliases-package: site.egan.aigou.domain,site.egan.aigou.query
+
+---
+server:
+  port: 8020
+spring:
+  application:
+    name: PRODUCT-SERVICE
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/aigou
+    username: root
+    password: 123456
+  profiles: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+mybatis-plus:
+  mapper-locations: classpath:site/egan/aigou/mapper/*Mapper.xml
+type-aliases-package: site.egan.aigou.domain,site.egan.aigou.query

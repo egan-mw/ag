@@ -18,6 +18,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka/
+feign:
+  hystrix:
+    enabled: true #开启断路器
 mybatis-plus:
   mapper-locations: classpath:site/egan/aigou/mapper/*Mapper.xml
 type-aliases-package: site.egan.aigou.domain,site.egan.aigou.query
@@ -38,6 +41,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka/
+feign:
+  hystrix:
+    enabled: true #开启断路器
 mybatis-plus:
   mapper-locations: classpath:site/egan/aigou/mapper/*Mapper.xml
 type-aliases-package: site.egan.aigou.domain,site.egan.aigou.query

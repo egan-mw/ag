@@ -9,7 +9,7 @@ server:
 spring:
   application:
     name: COMMON-SERVICE
-    profiles: dev #dev环境
+  profiles: dev #dev环境
 eureka:
   instance:
     hostname: localhost

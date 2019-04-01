@@ -9,6 +9,7 @@ server:
 spring:
   application:
     name: COMMON-PROVIDER
+	profiles: dev #dev环境
 eureka:
   instance:
     hostname: localhost
@@ -24,6 +25,7 @@ server:
 spring:
   application:
     name: COMMON-PROVIDER
+	profiles: test #test环境
 eureka:
   instance:
     hostname: localhost

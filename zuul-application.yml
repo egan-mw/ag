@@ -24,7 +24,5 @@ zuul:
     product.path: /product/**   
     common.serviceId: common-service	 
     common.path: /common/**   
-    product.serviceId: product-service 
-    product.path: /product/**   
   ignored-services: "*"  #禁止使用服务名访问:如果有很多，可以直接使用"*"忽略所有
   prefix: "/aigou"  # 统一前缀（访问的路径加上前缀）

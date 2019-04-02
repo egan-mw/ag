@@ -26,12 +26,3 @@ zuul:
     common.path: /common/**   
   ignored-services: "*"  #禁止使用服务名访问:如果有很多，可以直接使用"*"忽略所有
   prefix: "/aigou"  # 统一前缀（访问的路径加上前缀）
-
-#配置连接超时解决504
-zuul:
-  host:
-    connect-timeout-millis: 15000 #HTTP连接超时要比Hystrix的大
-    socket-timeout-millis: 60000   #socket超时
-ribbon:
-  ReadTimeout: 10000
-  ConnectTimeout: 10000

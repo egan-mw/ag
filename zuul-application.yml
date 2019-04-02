@@ -30,12 +30,8 @@ zuul:
 #配置连接超时解决504
 zuul:
   host:
-    connect-timeout-millis: 10000
-    socket-timeout-millis: 60000
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
+    connect-timeout-millis: 15000 #HTTP连接超时要比Hystrix的大
+    socket-timeout-millis: 60000   #socket超时
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000

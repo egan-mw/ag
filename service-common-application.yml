@@ -9,6 +9,10 @@ server:
 spring:
   application:
     name: COMMON-SERVICE
+	data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9300
   profiles: dev #dev环境
 eureka:
   instance:
@@ -25,6 +29,10 @@ server:
 spring:
   application:
     name: COMMON-SERVICE
+	data:
+		elasticsearch:
+			cluster-name: elasticsearch
+			cluster-nodes: 127.0.0.1:9300	
   profiles: test #test环境
 eureka:
   instance:
